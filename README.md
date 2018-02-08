@@ -17,6 +17,5 @@
 - Run `yarn build`. This will generate the `build` folder.
 - You can test the build output by accessing it though the nginx server at `http://localhost:3100`
 
-# Markets
-
-The application supports all the casumo markets based on url `/en /de ...`
+## Docker Compose
+- This repo is dockerised with an nginx built in in case you need proxy pass for sockets etc.
