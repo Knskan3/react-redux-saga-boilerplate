@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<exampleComponent /> Snapshot sould be correct 1`] = `
+<div
+  className="sc-bdVaJa gNeAJc"
+>
+  <h2
+    className="title sc-bwzfXH dUnxak"
+  >
+    Potato on a bike test
+  </h2>
+</div>
+`;
