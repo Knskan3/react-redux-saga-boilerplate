@@ -4,7 +4,7 @@
  * @type {}
  */
 const config = {
-  delay: 2000,
+    delay: 2000
 };
 
 export default config;

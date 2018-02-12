@@ -1,10 +1,10 @@
 // src/reducers/index.js
 import { combineReducers } from 'redux-immutable';
-import exampleReducer from './exampleReducer';
+import mainReducer from './reducer';
+import { STATE_KEY } from '../constants';
 
 const rootReducer = combineReducers({
-  // feel free to add more reducers here if needed ...
-  exampleReducer,
+    [STATE_KEY]: mainReducer
 });
 
 export default rootReducer;

@@ -1,9 +1,16 @@
 import { createSelector } from 'reselect';
+import { STATE_KEY } from '../constants';
 
-const appRootSelector = (state) => (state.get('exampleReducer'));
+let statePath = [STATE_KEY];
 
-const exampleSelector = createSelector(appRootSelector, (stateChunk) => stateChunk.toJS());
+export const setParentPath = parentPath => {
+    statePath = [...parentPath, ...statePath];
 
-export {
-  exampleSelector,
+    // Children selectors to be called here for setup
 };
+
+const rootSelector = state => state.getIn(statePath);
+
+const selector = createSelector(rootSelector, stateChunk => stateChunk.toJS());
+
+export { selector };
