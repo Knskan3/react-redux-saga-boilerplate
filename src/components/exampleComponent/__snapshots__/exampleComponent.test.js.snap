@@ -2,10 +2,10 @@
 
 exports[`<exampleComponent /> Snapshot sould be correct 1`] = `
 <div
-  className="sc-bdVaJa gNeAJc"
+  className="sc-bdVaJa jsgDlo"
 >
   <h2
-    className="title sc-bwzfXH dUnxak"
+    className="title sc-bwzfXH hxgnYi"
   >
     Potato on a bike test
   </h2>

@@ -1,26 +1,16 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
-import store from './store/configureStore';
-import App from './containers/';
 
-const renderApp = (Component) => (
-  render(
-    <Provider store={store}>
-      <AppContainer>
-        <Component />
-      </AppContainer>
-    </Provider>,
-    document.getElementById('boilerplate-root'),
-  )
-);
+import component from './components/exampleComponent';
+import ExampleComponent from './containers';
+import { setParentPath } from './selectors';
+import rootSaga from './sagas';
+import rootReducer from './reducers';
+import { STATE_KEY as stateKey } from './constants';
 
-renderApp(App);
-
-if (module.hot) {
-  module.hot.accept('./components/exampleComponent/', () => {
-    const NewApp = require('./components/exampleComponent/').default; //eslint-disable-line
-    renderApp(NewApp);
-  });
-}
+export {
+    ExampleComponent, // name of the module (this is the container)
+    component, // this is the component, only used for testing porpuses
+    rootSaga,
+    rootReducer,
+    stateKey,
+    setParentPath
+};

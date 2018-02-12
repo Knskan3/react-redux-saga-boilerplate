@@ -1,15 +1,13 @@
 import { fromJS } from 'immutable';
-import {
-  ACTION_EXAMPLE_PUT,
-} from '../constants';
+import { ACTION_EXAMPLE_PUT } from '../constants';
 
 /**
  * Default App state, used at start
  * @type {Object}
  */
 const defaultState = fromJS({
-  title: 'Waaaait...',
-  show: false,
+    title: 'Waaaait...',
+    show: false
 });
 
 /**
@@ -20,11 +18,11 @@ const defaultState = fromJS({
  *
  * @returns {Object} New App state
  */
-export default function (state = defaultState, action) {
-  const actions = {
-    [ACTION_EXAMPLE_PUT]: () => (state.set('show', action.show)),
-    // Add more action handlers here
-  };
+export default function(state = defaultState, action) {
+    const actions = {
+        [ACTION_EXAMPLE_PUT]: () => state.set('show', action.show)
+        // Add more action handlers here
+    };
 
-  return actions[action.type] ? actions[action.type]() : state;
+    return actions[action.type] ? actions[action.type]() : state;
 }

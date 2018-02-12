@@ -1,12 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ExampleComponent from '../components/exampleComponent/';
-import {
-  exampleSelector,
-} from '../selectors';
-import {
-  actionExampleRequest,
-} from '../actions';
+import { selector } from '../selectors';
+import { actionExampleRequest } from '../actions';
 
 /**
  * Injects the needed state values into the component as props.
@@ -15,12 +11,13 @@ import {
  *
  * @param {Object} state Cureent app state
  */
-const mapStateToProps = (state) => {
-  const selectedState = exampleSelector(state);
-  return {
-    title: selectedState.title,
-    show: selectedState.show,
-  };
+const mapStateToProps = state => {
+    const selectedState = selector(state);
+
+    return {
+        title: selectedState.title,
+        show: selectedState.show
+    };
 };
 
 /**
@@ -29,10 +26,12 @@ const mapStateToProps = (state) => {
  * @param {Function} dispatch Action dispatcher
  * @returns {Function} dispatchProps
  */
-const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({
-    actionExampleRequest,
-  }, dispatch)
-);
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            actionExampleRequest
+        },
+        dispatch
+    );
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExampleComponent);
